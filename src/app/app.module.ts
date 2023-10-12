@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 
 import { CarouselModule } from 'primeng/carousel';
 import {ButtonModule} from 'primeng/button'
+import { DropdownModule } from 'primeng/dropdown';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -22,7 +24,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     CarouselModule,
-    ButtonModule
+    ButtonModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
