@@ -1,0 +1,31 @@
+<p class="welcome">Welcome to <strong>Coded Lens</strong>.</p>
+<p class="description">
+    We remove the hidden views of biases in technology. To begin click the "Get Started" button or navigate to select pages from the navigation bar.
+</p>
+
+<div class="carousel">
+    <p-carousel 
+    [value]="quotes" 
+    [numVisible]="1" 
+    [numScroll]="1" 
+    [circular]="true" 
+    [autoplayInterval]="4500">
+        <ng-template let-quote pTemplate="Quote">
+            <div class="quotes">
+                <div>
+                    <h4><span class="huge-quote">"</span>{{ quote.quote }}<span class="huge-quote">"</span></h4>
+                    <h6>{{ quote.author }}</h6>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+</div>
+
+<div class="get-started" >
+    <p-button 
+    label="Get Started" 
+    [rounded]="true"
+    [outlined]="true" 
+    severity="danger"
+    size="large" ></p-button>
+</div>

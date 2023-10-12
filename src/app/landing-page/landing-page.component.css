@@ -1,0 +1,31 @@
+.welcome {
+    text-align: center;
+}
+.quotes {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.carousel {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.description {
+    text-align: center;
+}
+
+strong {
+    font-size: 30px;
+}
+
+.get-started {
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.huge-quote {
+    font-size: 40px;
+}
