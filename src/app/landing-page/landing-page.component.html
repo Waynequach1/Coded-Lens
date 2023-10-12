@@ -3,29 +3,35 @@
     We remove the hidden views of biases in technology. To begin click the "Get Started" button or navigate to select pages from the navigation bar.
 </p>
 
-<div class="carousel">
-    <p-carousel 
-    [value]="quotes" 
-    [numVisible]="1" 
-    [numScroll]="1" 
-    [circular]="true" 
-    [autoplayInterval]="4500">
-        <ng-template let-quote pTemplate="Quote">
-            <div class="quotes">
-                <div>
-                    <h4><span class="huge-quote">"</span>{{ quote.quote }}<span class="huge-quote">"</span></h4>
-                    <h6>{{ quote.author }}</h6>
+<div class="page-content">
+    <div class="carousel">
+        <p-carousel 
+        [value]="quotes" 
+        [numVisible]="1" 
+        [numScroll]="1" 
+        [circular]="true" 
+        [autoplayInterval]="4500">
+            <ng-template let-quote pTemplate="Quote">
+                <div class="quotes">
+                    <div class="quote">
+                        <h4 class="quotation" [ngStyle]="{'font-size': quote.size}"><span class="huge-quote">"</span>{{ quote.quote }}<span class="huge-quote">"</span></h4>
+                        <div class="quote-reference">
+                            <strong class="author">{{ quote.author }}</strong> <br />
+                            <strong class="title">{{ quote.title }}</strong>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </ng-template>
-    </p-carousel>
-</div>
-
-<div class="get-started" >
-    <p-button 
-    label="Get Started" 
-    [rounded]="true"
-    [outlined]="true" 
-    severity="danger"
-    size="large" ></p-button>
+            </ng-template>
+        </p-carousel>
+    </div>
+    
+    <div class="get-started" >
+        <p-button 
+        label="Get Started" 
+        [rounded]="true"
+        [outlined]="true" 
+        severity="danger"
+        size="large" ></p-button>
+    </div>
+    
 </div>
