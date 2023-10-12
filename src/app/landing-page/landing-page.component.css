@@ -1,0 +1,61 @@
+.welcome {
+    text-align: center;
+}
+.quotes {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.carousel {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.description {
+    text-align: center;
+}
+
+strong {
+    font-size: 30px;
+}
+
+.get-started {
+    text-align: center;
+    margin: auto;
+    margin-top: 4%;
+}
+
+.huge-quote {
+    font-size: 25px;
+}
+
+.quote {
+    min-height: 200px;
+    max-height: 200px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.author {
+    font-size: 16px;
+}
+.title {
+    font-size: 12px;
+}
+
+.quotation {
+    margin-bottom: auto;
+}
+
+.page-content {
+    background-color:cyan;
+    animation: fadeIn 5s;
+    padding-bottom: 15px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
