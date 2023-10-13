@@ -69,3 +69,12 @@
         crime and continue to feed into the cycle.
     </p>
 </div>
+
+<span class="large-left">
+    And the list only continues... but what are the rights and wrongs?
+</span>
+
+<div class= "selection-container">
+    <p-button [severity]="goodSeverity" [label]="goodText" (mouseover)="handleOnHover(true)" (mouseout)="handleOnLeave(true)"></p-button>
+    <p-button [severity]="badSeverity" [label]="badText" (mouseover)="handleOnHover(false)" (mouseout)="handleOnLeave(true)"></p-button>
+</div>

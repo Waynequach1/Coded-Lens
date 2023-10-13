@@ -33,3 +33,11 @@
 .text-container {
     margin-bottom: 30px;
 }
+
+.selection-container {
+    width: 40%;
+    margin: 20px auto 20px auto;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
