@@ -14,7 +14,6 @@ export class NavbarComponent {
 
   private router: Router;
 
-
   constructor(router: Router) {
     this.router = router;
   }
