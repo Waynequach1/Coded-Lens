@@ -1,0 +1,47 @@
+<h1 class="title">{{ pageType | formatTitle}}</h1>
+<p class="center">{{ pageDescription }}</p>
+
+<div class="text-container" *ngFor="let technology of technologies">
+    <span class="large-left">
+        {{ technology.technology}}
+    </span>
+    
+    <p class="text-left-indent">
+       {{ technology.body}}
+    </p>
+</div>
+
+<div *ngIf="pageType === PossiblePageTypes.the_lens;else nonlens">
+    <span class="large-left">
+        And the list only continues... but what are the rights and wrongs?
+    </span>
+    
+    <div class= "selection-container">
+        <p-button 
+        [severity]="leftButtonSeverity"
+        [label]="leftButtonText" 
+        (mouseover)="handleOnHover(true)" 
+        (mouseout)="handleOnLeave(true)"
+        (onClick)="handleOnClick(true)"></p-button>
+        <p-button
+        [severity]="rightButtonSeverity" 
+        [label]="rightButtonText" 
+        (mouseover)="handleOnHover(false)" 
+        (mouseout)="handleOnLeave(false)"
+        (onClick)="handleOnClick(false)"></p-button>
+    </div>
+</div>
+
+<ng-template #nonlens>
+    <div class= "selection-container">
+        <p-button 
+        [severity]="leftButtonSeverity"
+        [label]="leftButtonText" 
+        (onClick)="handleOnClick(true)"></p-button>
+        <p-button
+        [severity]="rightButtonSeverity" 
+        [label]="rightButtonText" 
+        (onClick)="handleOnClick(false)"></p-button>
+    </div>
+</ng-template>
+
