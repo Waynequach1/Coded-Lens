@@ -7,16 +7,15 @@
 }
 
 .navbar {
-    border: 1px solid black;
     text-align: center;
     justify-content: center;
     margin: 0;
     padding: 0;
-    flex: 1
+    flex: 1.2;
 }
 
 .content {
     margin: 0;
     padding: 0;
-    flex: 5
+    flex: 8;
 }

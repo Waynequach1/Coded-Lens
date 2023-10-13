@@ -1,1 +1,21 @@
-<p>navbar works!</p>
+<div class="nav-container">
+    <div class="logo-container">
+        <img src="/assets/logo.png" class="logo" (click)="routeTo({name: 'Home', route: '/home'})" />
+    </div>  
+    
+    <div class="navigation-link-container">
+        <ng-container *ngFor="let item of navigationItems"> 
+            <div class="link" [ngTemplateOutlet]="(item.routeItems) ? nestedLink : simpleLink" [ngTemplateOutletContext]="{item}"></div>            
+        </ng-container>
+    </div>
+</div>
+
+<ng-template #nestedLink let-item="item">
+    <p-dropdown ngDefaultControl [options]="item.routeItems" optionLabel="name" [placeholder]="item.name" [(ngModel)]="selectedItem" (onClick)="routeTo()"></p-dropdown>
+</ng-template>
+
+<ng-template #simpleLink let-item="item">
+    <p-button ngDefaultControl [label]="item.name" (onClick)="routeTo(item)"></p-button>
+</ng-template>
+
+<hr />
