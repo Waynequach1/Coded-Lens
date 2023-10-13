@@ -8,6 +8,7 @@ import { CarouselModule } from 'primeng/carousel';
 import {ButtonModule} from 'primeng/button'
 import { DropdownModule } from 'primeng/dropdown';
 import { DividerModule } from 'primeng/divider';
+import { TooltipModule } from 'primeng/tooltip';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,7 +40,8 @@ import { GoodComponent } from './get-started/good/good.component';
     ButtonModule,
     DropdownModule,
     DividerModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
