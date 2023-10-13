@@ -41,7 +41,7 @@ import { GoodComponent } from './get-started/good/good.component';
     DropdownModule,
     DividerModule,
     BrowserAnimationsModule,
-    TooltipModule
+    TooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
