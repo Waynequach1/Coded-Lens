@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { technologyExplanations } from './data/technology-explanations';
 
 @Component({
   selector: 'coded-lens-lens-at-work',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./lens-at-work.component.css']
 })
 export class LensAtWorkComponent {
+  public technologies = technologyExplanations;
   public goodSeverity = 'success'
   public goodText = 'The Good'
   public badSeverity = 'danger'

@@ -1,74 +1,16 @@
 <h1 class="title">The Lens</h1>
 <p class="center">Using the lens we can uncover biases in the following technologies</p>
 
-<div class="text-container">
+<div class="text-container" *ngFor="let technology of technologies">
     <span class="large-left">
-        Soap dispensers
+        {{ technology.technology}}
     </span>
     
     <p class="text-left-indent">
-        One of the most commonly overlooked biases in technology is soap dispensers. They exist everywhere and yet 
-        for a minority of people automatic soap dispensers don't work. This is because automatic soap dispensers rely 
-        on infared energy which gets absorbed more in darker people thus the machine is not able to pick up any infrared
-        energy to dispense the soap.
+       {{ technology.body}}
     </p>
 </div>
 
-
-<div class="text-container">
-    <span class="large-left">
-        Facial Recognition
-    </span>
-    
-    <p class="text-left-indent">
-       Another super popular bias in technology is facial recognition. Many countries have already started enforcing
-       use of this technology in widespread areas from simple beauty apps to use in security or even the surveillance of individuals.
-       The major concern however is that facial recognition is inherently biased. These technologies use ai an feed it data on which it 
-       used to learn from the data however is mainly dominated by a white male sample size. As such people of color and women often get 
-       higher inaccuracies when using these technology. Further, the cross section of these minorties suffer most from this biased dataset
-        with substantially higher inaccuracies then white males.
-    </p>
-</div>
-
-<div class="text-container">
-    <span class="large-left">
-        Algorthims For Determining Employment
-    </span>
-    
-    <p class="text-left-indent">
-        Many companies have started using algorithms for hasing through potential employees. This is related to reducing hiring costs
-        and saving time on the company's end. However, many of these algorithms contain potential biases. One example is amazon's hiring 
-        algorithm which learned based on successful applicants that female employees have less sustainability and in turn automatically 
-        declined every women that applied. 
-    </p>
-</div>
-
-<div class="text-container">
-    <span class="large-left">
-        Chat Bots
-    </span>
-    
-    <p class="text-left-indent">
-        Chat bots that are designed simpliy for interacting and performing basic commands have biases too. Inherently, the developers
-        of these chat bots are trained on biased data simiarily to facial recognition algorithms. As such, these chat bots have limitied 
-        capability when interacting with individuals outside of the majority group (white males) and aren't capable of understanding 
-        minority groups use of English (aka African-American Vernacular English or AAVE).
-    </p>
-</div>
-
-<div class="text-container">
-    <span class="large-left">
-        Crime Watch Aglorthims
-    </span>
-    
-    <p class="text-left-indent">
-        What better way to capture criminals than to capture them the moment they act? This is why these algorithms were designed. 
-        Making use of incarceration rates and neighbourhood risk assessments, these algorithims attempt to predict where future
-        crime would occur. However, these algorithims tend to target minority neighbourhoods in America due to the massive unbalance 
-        of racial incarcerations in America (With a massive majority being of darker skin color). These algorithims thus generate more 
-        crime and continue to feed into the cycle.
-    </p>
-</div>
 
 <span class="large-left">
     And the list only continues... but what are the rights and wrongs?
@@ -76,5 +18,5 @@
 
 <div class= "selection-container">
     <p-button [severity]="goodSeverity" [label]="goodText" (mouseover)="handleOnHover(true)" (mouseout)="handleOnLeave(true)"></p-button>
-    <p-button [severity]="badSeverity" [label]="badText" (mouseover)="handleOnHover(false)" (mouseout)="handleOnLeave(true)"></p-button>
+    <p-button [severity]="badSeverity" [label]="badText" (mouseover)="handleOnHover(false)" (mouseout)="handleOnLeave(false)"></p-button>
 </div>
