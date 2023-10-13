@@ -17,6 +17,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CreditsComponent } from './credits/credits.component';
 import { CodeUnveiledComponent } from './get-started/code-unveiled/code-unveiled.component';
 import { GenericDiscoverComponent } from './get-started/generic-discover/generic-discover.component';
+import { FormatTitlePipe } from './get-started/generic-discover/pipes/format-title.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { GenericDiscoverComponent } from './get-started/generic-discover/generic
     CreditsComponent,
     CodeUnveiledComponent,
     GenericDiscoverComponent,
+    FormatTitlePipe,
   ],
   imports: [
     CommonModule,

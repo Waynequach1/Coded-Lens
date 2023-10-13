@@ -4,6 +4,7 @@
     font-family: "monospace";
     text-decoration: underline;
     font-size: 28px;
+    text-transform: capitalize;
 }
 
 .bolded-centerd-comment {
