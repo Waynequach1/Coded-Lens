@@ -10,18 +10,24 @@ import { PossiblePageTypes } from './models';
   styleUrls: ['./generic-discover.component.css']
 })
 export class GenericDiscoverComponent {
+  public PossiblePageTypes = PossiblePageTypes;
+
   public technologies;
+  public pageType;
+
   public goodSeverity = 'success'
   public goodText = 'The Good'
   public badSeverity = 'danger'
   public badText = 'The Bad'
+  
   private router: Router;
 
   constructor(router: Router) {
     this.router = router;  
-
     // Parse the router and retrieve the url type to assign generic data to.
-    this.technologies = this.getTechnologyInformation(this.router.url.split('/')[2] as PossiblePageTypes);
+    this.pageType = this.router.url.split('/')[2] as PossiblePageTypes
+
+    this.technologies = this.getTechnologyInformation(this.pageType);
     
   }
 
@@ -44,6 +50,14 @@ export class GenericDiscoverComponent {
     } else {
       this.badSeverity = 'danger';
       this.badText = 'The Bad';
+    }
+  }
+
+  public handleOnClick(isGood: boolean) {
+    if (isGood) {
+      this.router.navigateByUrl("/get_started/the_implications")
+    } else {
+      this.router.navigateByUrl("/get_started/the_good")
     }
   }
 

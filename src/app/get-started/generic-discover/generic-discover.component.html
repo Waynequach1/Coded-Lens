@@ -11,11 +11,21 @@
     </p>
 </div>
 
-<span class="large-left">
+<span class="large-left" *ngIf="pageType === PossiblePageTypes.the_lens">
     And the list only continues... but what are the rights and wrongs?
 </span>
 
 <div class= "selection-container">
-    <p-button [severity]="goodSeverity" [label]="goodText" (mouseover)="handleOnHover(true)" (mouseout)="handleOnLeave(true)"></p-button>
-    <p-button [severity]="badSeverity" [label]="badText" (mouseover)="handleOnHover(false)" (mouseout)="handleOnLeave(false)"></p-button>
+    <p-button 
+    [severity]="goodSeverity"
+    [label]="goodText" 
+    (mouseover)="handleOnHover(true)" 
+    (mouseout)="handleOnLeave(true)"
+    (onClick)="handleOnClick(true)"></p-button>
+    <p-button
+    [severity]="badSeverity" 
+    [label]="badText" 
+    (mouseover)="handleOnHover(false)" 
+    (mouseout)="handleOnLeave(false)"
+    (onClick)="handleOnClick(false)"></p-button>
 </div>

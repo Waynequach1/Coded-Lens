@@ -3,22 +3,22 @@ import { TechnologyInfo } from "../models";
 export const technologyImplication: TechnologyInfo[] = [
     {
         technology: "Soap dispensers",
-        body: "",
+        body: "This is only the start of where bias in technology stems from. The lack of awareness to these issues is what leads to biases in technology and eventually discrimination.",
     },
     {
         technology: "Facial Recognition",
-        body: "",
+        body: "Even though black minorities consistently fall far below acceptable accuracy rates, these algorithms continue to be applied to use everywhere. With minor implications like being unable to capture your face on your phone for screen unlocks to being unable to enter your home because your apartment has implemented a facial recognition security system to much larger and real threat of life consequences like misidentifying of criminals. The continued misue and lack of clarity on the appropriateness of these algorithms and their impact in policing and security could pave the way for rogue ai.",
     },
     {
         technology: "Algorthims For Determining Employment",
-        body: "",
+        body: "These algorithms unfairly and sometimes illegally remove the fairness and equity when it comes to hiring employees. One of the largest implications of these algorithms is that they are \"black boxes\" meaning they don't need to explain how they got to the decision they did. Thus, when users are declined a job they'll have no idea why.",
     },
     {
         technology: "Chat Bots",
-        body: "",
+        body: "While chat bots themselves are supposedly harmless, these concerns with chat bots show that there is a widespread issue of using biased data to learn off of everywhere. With widespread implications that trying to escape from biased data is an arduous task.",
     },
     {
-        technology: "Crime Watch Algorithims",
-        body: "",
+        technology: "Crime Watch Algorithms ",
+        body: "The idea of stopping crime in its place seems ideal but when put into actual play it has serious complications. For starters, it induces officers to continually patrol areas of concerns and thus, raising the crime watch in an area. However, this also increase the number of incarcerations since more policing will increase the probability of catching suspects. However, this reinforces the algorithms and leads to officers continnualy to patrol specific areas to now generate arrests not just catch it. Further, these algorithms are sometimes linked to probable cause for searching innocent citizens and arresting them after doing a \"legal search\".",
     }
 ]
