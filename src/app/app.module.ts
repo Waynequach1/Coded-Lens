@@ -16,9 +16,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CreditsComponent } from './credits/credits.component';
 import { CodeUnveiledComponent } from './get-started/code-unveiled/code-unveiled.component';
-import { LensAtWorkComponent } from './get-started/lens-at-work/lens-at-work.component';
-import { ImplicationsComponent } from './get-started/implications/implications.component';
-import { GoodComponent } from './get-started/good/good.component';
+import { GenericDiscoverComponent } from './get-started/generic-discover/generic-discover.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +25,7 @@ import { GoodComponent } from './get-started/good/good.component';
     NavbarComponent,
     CreditsComponent,
     CodeUnveiledComponent,
-    LensAtWorkComponent,
-    ImplicationsComponent,
-    GoodComponent
+    GenericDiscoverComponent,
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,4 @@
-import { TechnologyInfo } from "../../models/technology-info";
+import { TechnologyInfo } from "../models";
 
 export const technologyExplanations: TechnologyInfo[] = [
     {
