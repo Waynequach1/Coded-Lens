@@ -14,13 +14,21 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CreditsComponent } from './credits/credits.component';
+import { CodeUnveiledComponent } from './get-started/code-unveiled/code-unveiled.component';
+import { LensAtWorkComponent } from './get-started/lens-at-work/lens-at-work.component';
+import { ImplicationsComponent } from './get-started/implications/implications.component';
+import { GoodComponent } from './get-started/good/good.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
-    CreditsComponent
+    CreditsComponent,
+    CodeUnveiledComponent,
+    LensAtWorkComponent,
+    ImplicationsComponent,
+    GoodComponent
   ],
   imports: [
     CommonModule,
