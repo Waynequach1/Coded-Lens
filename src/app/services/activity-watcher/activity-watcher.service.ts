@@ -16,7 +16,7 @@ export class ActivityWatcherService {
    }
 
 
-   private initializeAlexaData(): AlexaInfo {
+   public initializeAlexaData(): AlexaInfo {
     return ({
       foundConversations: 0,
       // TODO FETCH THIS NUMBER

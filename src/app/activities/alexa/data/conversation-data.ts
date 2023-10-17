@@ -6,19 +6,19 @@ export const ConversationData: Conversation[] = [
     response: ["blah", "asd", "xyz"],
     options: [{
         prompt: "Chat 1",
-        response: ["zxc"]
+        response: ["zxc"],
     },
     {
         prompt: "Chat 2",
-        response: ["zxc"]
+        response: ["zxc"],
     },
     {
         prompt: "Chat 3",
-        response: ["zxc"]
+        response: ["zxc"],
     },
     {
         prompt: "Chat 4",
-        response: ["zxc"]
-    }],
+        response: ["zxc"],
+    }]
     }
 ]
