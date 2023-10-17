@@ -9,6 +9,7 @@ import {ButtonModule} from 'primeng/button'
 import { DropdownModule } from 'primeng/dropdown';
 import { DividerModule } from 'primeng/divider';
 import { TooltipModule } from 'primeng/tooltip';
+import { InputTextModule } from 'primeng/inputtext';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,6 +43,7 @@ import { AlexaComponent } from './activities/alexa/alexa.component';
     DividerModule,
     BrowserAnimationsModule,
     TooltipModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]

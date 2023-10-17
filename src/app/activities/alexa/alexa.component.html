@@ -1,11 +1,26 @@
-<div class="conversation-container">
-    <div class="display-container">
-        <div>
-            Message contents
+<div class="conversation-container" *ngIf="currentPrompt | async as conversation">
+    <div class="display-container" *ngIf="conservationLog | async as log">
+        <div *ngFor="let speech of log">
+            {{ speech.content }}
+            asd
         </div>
     </div>
     <div class="message-container">
-        asd
+        <div class="prompt-container">
+            <div class="prompt">
+                <input readonly="readonly" type="text" pInputText style="width: 100%" [placeholder]="conversation.prompt" />
+            </div>
+            <p-button label="Submit">
+    
+            </p-button>
+        </div>
+
+
+        <div class="responses" >
+            <div *ngFor="let option of conversation.options">
+                <input (click)="handleClick(option)" class="banana" readonly="readonly" type="text" pInputText style="width: 100%; cursor: pointer; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;" [placeholder]="option.prompt" />
+            </div>
+        </div>
     </div>
 </div>
 

@@ -1,5 +1,6 @@
 export interface Conversation {
-    prompt: string[],
+    prompt: string,
     response: string[],
-    options: Conversation[],
+    // Max of four
+    options?: Conversation[],
 }
