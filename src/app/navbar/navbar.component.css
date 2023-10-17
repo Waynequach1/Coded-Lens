@@ -1,0 +1,30 @@
+.nav-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    height: 100%;
+}
+
+.logo-container {
+    width: 25%;
+    /* temporary until a logo is made */
+    height: 70%;
+    margin-bottom: auto;
+}
+
+.logo {
+    height: 70%;
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+
+.navigation-link-container {
+    width: 50%;
+    justify-content: flex-end;
+    display: flex;
+    justify-content: center;
+}
+
+.link {
+   padding-right: 10px;
+}
