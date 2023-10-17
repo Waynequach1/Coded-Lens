@@ -18,6 +18,7 @@ import { CreditsComponent } from './credits/credits.component';
 import { CodeUnveiledComponent } from './get-started/code-unveiled/code-unveiled.component';
 import { GenericDiscoverComponent } from './get-started/generic-discover/generic-discover.component';
 import { FormatTitlePipe } from './get-started/generic-discover/pipes/format-title.pipe';
+import { AlexaComponent } from './activities/alexa/alexa.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FormatTitlePipe } from './get-started/generic-discover/pipes/format-tit
     CodeUnveiledComponent,
     GenericDiscoverComponent,
     FormatTitlePipe,
+    AlexaComponent,
   ],
   imports: [
     CommonModule,

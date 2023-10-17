@@ -1,0 +1,17 @@
+.conversation-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.display-container {
+    flex: 4;
+    overflow-y: scroll;
+}
+
+.message-container {
+    flex: 1;
+    background-color: white;
+    border: 1px solid black;
+}
