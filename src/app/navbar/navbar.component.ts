@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavigationItem } from './models/navigation-item';
+import { NavigationItem } from './models/navigation-item.model';
 import { navigationItems } from './data/navigtion-items';
 
 @Component({
