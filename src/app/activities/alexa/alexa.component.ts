@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivityWatcherService } from '../../services/activity-watcher/activity-watcher.service';
-import { Conversation, ConversationInfo, Speech } from './models';
-import { BehaviorSubject, Observable, map, of } from 'rxjs';
+import { Conversation, Speech } from './models';
+import { BehaviorSubject, delay } from 'rxjs';
 import { ConversationData } from './data/conversation-data';
+import { AlexaInfo } from '../../services/activity-watcher/models';
 
 @Component({
   selector: 'coded-lens-alexa',
@@ -11,10 +12,12 @@ import { ConversationData } from './data/conversation-data';
 })
 export class AlexaComponent {
   public activityWatcherService: ActivityWatcherService;
-  public conservationLog: BehaviorSubject<Speech[]> = new BehaviorSubject<Speech[]>([]);
+  public conversationLog: BehaviorSubject<Speech[]> = new BehaviorSubject<Speech[]>([]);
   public conversationOptions: BehaviorSubject<Conversation[]> = new BehaviorSubject<Conversation[]>([]);
   public currentPrompt: BehaviorSubject<Conversation>;
-  public conversationInfo: BehaviorSubject<ConversationInfo>;
+  public alexaInfo: BehaviorSubject<AlexaInfo>;
+  public textAnimate: boolean = true;
+  public isAnimating: boolean = false;
 
   private fullConversationLogs = ConversationData;
 
@@ -23,13 +26,9 @@ export class AlexaComponent {
 
     // Initialize current prompt data
     this.currentPrompt = new BehaviorSubject<Conversation>(this.fullConversationLogs[0]);
+    this.resetAlexa();
 
-    this.addConversation({
-      content: "Welcome to Alexa. What would you like to know?",
-      speakerIsHuman: false,
-    });
-
-    this.conversationInfo = new BehaviorSubject<ConversationInfo>(this.initializeConversationInfo());
+    this.alexaInfo = new BehaviorSubject<AlexaInfo>(this.activityWatcherService.getAlexaData());
   }
 
   ngOnInit() {
@@ -37,27 +36,42 @@ export class AlexaComponent {
   }
 
   public addConversation(speech: Speech) {
-    this.conservationLog.next([
-      ...this.conservationLog.value,
+    this.conversationLog.next([
+      ...this.conversationLog.value,
       speech
     ])
 
   }
 
-  public handleClick(conversation: Conversation) {
+  public selectPrompt(conversation: Conversation) {
     this.resetPromptAnimation();
-    this.updateDisplay(conversation);
-    this.currentPrompt.next(conversation);
+      this.updateDisplay(conversation);
+      this.currentPrompt.next(conversation);
   }
 
-  private initializeConversationInfo(): ConversationInfo {
-    return ({
-      information: this.activityWatcherService.initializeAlexaData(),
-      textAnimate: true,
-    })
+  public finishConversation(conversation: Conversation) {
+    const alexaValue = this.alexaInfo.value;
+    if (conversation?.finishId && (alexaValue.foundConversations.indexOf(conversation.finishId) == -1)) {
+      let newAlexaValue = {...alexaValue,
+        foundConversations: alexaValue.foundConversations.concat([conversation?.finishId]), 
+      }
+
+      if (conversation?.secretId && (alexaValue.foundSecrets.indexOf(conversation.secretId) == -1)) {
+        newAlexaValue = {...newAlexaValue, foundSecrets: alexaValue.foundConversations.concat([conversation?.secretId])}
+      }
+
+      this.activityWatcherService.updateAlexaData(newAlexaValue);
+      this.alexaInfo.next(this.activityWatcherService.getAlexaData());
+    }
+
+    this.resetAlexa();
   }
 
-  // Resets the prompt animtion, uses document but i dont see other ways to make things fancy 
+  public changeTextSpeed() {
+    this.textAnimate = !this.textAnimate;
+  }
+
+  // Resets the prompt animation, uses document but i dont see other ways to make things fancy 
   private resetPromptAnimation() {
     const element = document.getElementById("prompt");
 
@@ -68,13 +82,37 @@ export class AlexaComponent {
     }
   }
 
+  // Delays message sending to simulate text chat
   private updateDisplay(conversation: Conversation) {
-    this.addConversation(this.createSpeech(conversation.prompt, true));
-    conversation.response.map((response) => this.addConversation(this.createSpeech(response)));
+    this.isAnimating = true;
+    let index = -1;
+
+    const delayMessages = setInterval(() => {
+      if (index  == -1) {
+        this.addConversation(this.createSpeech(conversation.prompt, true));
+      }else if(index == conversation.response.length) {
+        this.isAnimating = false;
+        clearInterval(delayMessages);
+      } else {
+        this.addConversation(this.createSpeech(conversation.response[index]));
+      }
+      index = index + 1;       
+    }, this.textAnimate ? 800 : 100);
 
   }
 
   private createSpeech(content: string, isHuman?: boolean): Speech {
     return {content, speakerIsHuman: isHuman ?? false};
+  }
+
+  private resetAlexa() {
+    this.conversationLog.next([]);
+    this.conversationOptions.next([]);
+    this.currentPrompt.next(this.fullConversationLogs[0])
+    
+    this.addConversation({
+      content: "Welcome to Alexa. What would you like to know?",
+      speakerIsHuman: false,
+    });
   }
 }
