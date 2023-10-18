@@ -9,6 +9,8 @@ import {ButtonModule} from 'primeng/button'
 import { DropdownModule } from 'primeng/dropdown';
 import { DividerModule } from 'primeng/divider';
 import { TooltipModule } from 'primeng/tooltip';
+import { InputTextModule } from 'primeng/inputtext';
+import { ToggleButtonModule } from 'primeng/togglebutton';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,7 @@ import { CreditsComponent } from './credits/credits.component';
 import { CodeUnveiledComponent } from './get-started/code-unveiled/code-unveiled.component';
 import { GenericDiscoverComponent } from './get-started/generic-discover/generic-discover.component';
 import { FormatTitlePipe } from './get-started/generic-discover/pipes/format-title.pipe';
+import { AlexaComponent } from './activities/alexa/alexa.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { FormatTitlePipe } from './get-started/generic-discover/pipes/format-tit
     CodeUnveiledComponent,
     GenericDiscoverComponent,
     FormatTitlePipe,
+    AlexaComponent,
   ],
   imports: [
     CommonModule,
@@ -40,6 +44,8 @@ import { FormatTitlePipe } from './get-started/generic-discover/pipes/format-tit
     DividerModule,
     BrowserAnimationsModule,
     TooltipModule,
+    InputTextModule,
+    ToggleButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

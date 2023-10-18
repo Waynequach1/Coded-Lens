@@ -4,6 +4,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CreditsComponent } from './credits/credits.component';
 import { CodeUnveiledComponent } from './get-started/code-unveiled/code-unveiled.component';
 import { GenericDiscoverComponent } from './get-started/generic-discover/generic-discover.component';
+import { AlexaComponent } from './activities/alexa/alexa.component';
 
 const routes: Routes = [
   {path: 'credits', component: CreditsComponent, title: "Credits"},
@@ -11,7 +12,7 @@ const routes: Routes = [
   {path: 'get_started/the_lens', component: GenericDiscoverComponent, title: "The Lens"},
   {path: 'get_started/the_implications', component: GenericDiscoverComponent, title: "The Implications"},
   {path: 'get_started/the_good', component: GenericDiscoverComponent, title: "The Good"},
-  {path: 'credits', component: CreditsComponent, title: "Credits"},
+  {path: 'activities/alexa_talk', component: AlexaComponent, title: "Alexa"},
   {path: 'credits', component: CreditsComponent, title: "Credits"},
   {path: '**', component: LandingPageComponent, title: "Coded Lens"},
 ];

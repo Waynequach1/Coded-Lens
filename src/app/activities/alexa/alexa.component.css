@@ -1,0 +1,126 @@
+.conversation-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    padding: 15px;
+    padding-right: 0;
+}
+
+.header {
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+}
+
+.skip-button {
+    display: flex;
+}
+
+.text-animation {
+    margin-left: auto;
+    align-self: flex-end;
+}
+
+.display-statistics {
+    margin-right: auto;
+    align-self: flex-start;
+}
+
+.display-container {
+    flex: 4;
+    overflow-y: scroll;
+}
+
+.message-container {
+    flex: 1;
+}
+
+.human-text {
+    padding-top: 10px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.prompt-container {
+    border: 1px solid black;
+    display: flex;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.prompt {
+    margin-right: auto;
+}
+
+.responses {
+    border: 1px solid green;
+}
+
+.robot-text {
+    text-align: right;
+    color: blue;
+    background-color: aliceblue;
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+
+/* Modified from https://css-tricks.com/snippets/css/typewriter-effect/ */
+.typewriter {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    animation: 
+        typing 1.5s steps(40, end);  
+  }
+
+  .typewriter-no-animation {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    animation: 
+        typing 0.3s steps(40, end);  
+  }
+
+  .typewriter-typing {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0;
+    border-right: .15em solid orange; /* The typwriter cursor */
+    margin-right: auto;
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    animation-fill-mode: forwards;
+    animation: 
+        typing 1.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+  }
+
+  .typewriter-typing-no-animation {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0;
+    border-right: .15em solid transparent; /* The typwriter cursor */
+    animation: 
+        typing 0.3s steps(40, end),
+        blink-caret .75s step-end infinite;
+    animation-fill-mode: forwards;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0;  }
+    to { width: 100%; }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+  .option {
+    width: 100%; 
+    cursor: pointer;
+  }
