@@ -17,18 +17,18 @@ export const quotes: Quote[] = [
       quote: "A dangerous assumption is that technology is neutral, however, behind every software is a programmer who has informed their own perspective and biases.",
       title: "Bigory Encoded: Racial Bias In Technology",
       author: "Taylor Synclair Goethe",
-      size: "24px"
+      size: "18px"
     },
     {
-      quote: "A dangerous assumption is that technology is neutral, however, behind every software is a programmer who has informed their own perspective and biases.",
+      quote: "Anti-Blackness is no glitch. The system is accurately rigged, we might say, because, unlike in natural weather forecasts, the weathermen are also the ones who make it rain",
       title: "Weapons of Math Destruction",
       author: "Ruha Benjamin",
-      size: "18px"
+      size: "16px"
     },
     {
       quote: "There would always be mistakes, however, because models are, by their very nature, simplifications. No model can include all of the real world\'s complexity or the nuance of human communication.",
       title: "Weapons of Math Destruction",
       author: "Cathy O\'Neil",
-      size: "20px"
+      size: "18px"
     }
   ]
