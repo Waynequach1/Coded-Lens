@@ -26,6 +26,7 @@ import { FormatTitlePipe } from './get-started/generic-discover/pipes/format-tit
 import { AlexaComponent } from './activities/alexa/alexa.component';
 import { ClassroomComponent } from './activities/classroom/classroom.component';
 import { WarningPrompt } from './activities/classroom/warning-prompt/warning-prompt.component';
+import { QuizComponent } from './activities/quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { WarningPrompt } from './activities/classroom/warning-prompt/warning-pro
     AlexaComponent,
     ClassroomComponent,
     WarningPrompt,
+    QuizComponent,
   ],
   imports: [
     CommonModule,

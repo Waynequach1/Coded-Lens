@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { technologyExplanations, technologyGood, technologyImplication } from './data';
 import { PossiblePageTypes } from './models';
+import { ActivityWatcherService } from 'src/app/services/activity-watcher/activity-watcher.service';
 
 @Component({
   selector: 'coded-lens-generic-discover',
   templateUrl: './generic-discover.component.html',
   styleUrls: ['./generic-discover.component.css']
 })
-export class GenericDiscoverComponent {
+export class GenericDiscoverComponent implements OnInit {
   public PossiblePageTypes = PossiblePageTypes;
+  public finishedReadingAll = false;
 
   public technologies;
   public pageType;
@@ -22,8 +24,9 @@ export class GenericDiscoverComponent {
   public rightButtonText!: string;
   
   private router: Router;
+  private activityWatcherService: ActivityWatcherService;
 
-  constructor(router: Router) {
+  constructor(router: Router, activityWatcherService: ActivityWatcherService) {
     this.router = router;  
     // Parse the router and retrieve the url type to assign generic data to.
     this.pageType = this.router.url.split('/')[2] as PossiblePageTypes
@@ -31,6 +34,12 @@ export class GenericDiscoverComponent {
     this.technologies = this.getTechnologyInformation();
     this.setupButtonText();
     this.pageDescription = this.getPageDescription();
+    this.activityWatcherService = activityWatcherService;
+  }
+
+  ngOnInit() {
+    this.activityWatcherService.updateCodeData(this.pageType);
+    this.finishedReadingAll = this.activityWatcherService.getCodeData().finished_all;
   }
 
   // Inverts the button displays
@@ -57,10 +66,12 @@ export class GenericDiscoverComponent {
   public handleOnClick(isLeft: boolean) {
     if (isLeft && this.pageType !== PossiblePageTypes.the_lens) {
       this.router.navigateByUrl("/get_started/the_lens")
-    }else if (isLeft) {
+    } else if (isLeft) {
       this.router.navigateByUrl("/get_started/the_implications")
     } else {
-      this.router.navigateByUrl("/get_started/the_good")
+      this.pageType === "the_good" 
+      ? this.router.navigateByUrl("/get_started/the_implications") 
+      : this.router.navigateByUrl("/get_started/the_good")
     }
   }
 
@@ -75,6 +86,10 @@ export class GenericDiscoverComponent {
       default:
         return "Using the lens we can uncover biases in the following technologies";
     }
+  }
+
+  public redirectToQuiz() {
+    this.router.navigateByUrl("/activities/quiz");
   }
 
   private setupButtonText() {
