@@ -14,6 +14,8 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';
+import { ListboxModule } from 'primeng/listbox';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,7 +59,8 @@ import { QuizComponent } from './activities/quiz/quiz.component';
     ToggleButtonModule,
     DynamicDialogModule,
     ToastModule,    
-    ProgressBarModule
+    ProgressBarModule,
+    ListboxModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { quizQuestions } from './data/quiz-questions';
 
 @Component({
   selector: 'coded-lens-quiz',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent {
+  public questions = quizQuestions;
 
+  
 }

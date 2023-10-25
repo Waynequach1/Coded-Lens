@@ -1,1 +1,7 @@
-<p>quiz works!</p>
+<div class="center">
+    <div class="question" *ngFor="let question of questions; index as i">
+       {{ i + 1 }}. {{ question.question }} <br /><br />
+       <p-listbox [options]="question.possible_answers" placeholder="Select an answer">
+    </p-listbox>
+    </div>
+</div>
