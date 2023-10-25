@@ -1,0 +1,14 @@
+.warning-message {
+    text-align: center;
+    margin: auto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.continue {
+    float:right;
+}

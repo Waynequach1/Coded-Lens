@@ -26,7 +26,7 @@ export const navigationItems = [
       name: "Activities",
       routeItems: [{
         name: "A talk in the classroom",
-        route: "/activities/classrom_talk"
+        route: "/activities/classroom_talk"
       },
       {
         name: "A talk with Alexa",

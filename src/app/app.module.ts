@@ -5,12 +5,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { CarouselModule } from 'primeng/carousel';
-import {ButtonModule} from 'primeng/button'
+import { ButtonModule } from 'primeng/button'
 import { DropdownModule } from 'primeng/dropdown';
 import { DividerModule } from 'primeng/divider';
 import { TooltipModule } from 'primeng/tooltip';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToggleButtonModule } from 'primeng/togglebutton';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { ToastModule } from 'primeng/toast';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +24,8 @@ import { CodeUnveiledComponent } from './get-started/code-unveiled/code-unveiled
 import { GenericDiscoverComponent } from './get-started/generic-discover/generic-discover.component';
 import { FormatTitlePipe } from './get-started/generic-discover/pipes/format-title.pipe';
 import { AlexaComponent } from './activities/alexa/alexa.component';
+import { ClassroomComponent } from './activities/classroom/classroom.component';
+import { WarningPrompt } from './activities/classroom/warning-prompt/warning-prompt.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +37,8 @@ import { AlexaComponent } from './activities/alexa/alexa.component';
     GenericDiscoverComponent,
     FormatTitlePipe,
     AlexaComponent,
+    ClassroomComponent,
+    WarningPrompt,
   ],
   imports: [
     CommonModule,
@@ -46,6 +53,9 @@ import { AlexaComponent } from './activities/alexa/alexa.component';
     TooltipModule,
     InputTextModule,
     ToggleButtonModule,
+    DynamicDialogModule,
+    ToastModule,    
+    ProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,6 +5,7 @@ import { CreditsComponent } from './credits/credits.component';
 import { CodeUnveiledComponent } from './get-started/code-unveiled/code-unveiled.component';
 import { GenericDiscoverComponent } from './get-started/generic-discover/generic-discover.component';
 import { AlexaComponent } from './activities/alexa/alexa.component';
+import { ClassroomComponent } from './activities/classroom/classroom.component';
 
 const routes: Routes = [
   {path: 'credits', component: CreditsComponent, title: "Credits"},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'get_started/the_implications', component: GenericDiscoverComponent, title: "The Implications"},
   {path: 'get_started/the_good', component: GenericDiscoverComponent, title: "The Good"},
   {path: 'activities/alexa_talk', component: AlexaComponent, title: "Alexa"},
+  {path: 'activities/classroom_talk', component: ClassroomComponent, title: "Classroom"},
   {path: 'credits', component: CreditsComponent, title: "Credits"},
   {path: '**', component: LandingPageComponent, title: "Coded Lens"},
 ];

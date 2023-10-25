@@ -1,0 +1,35 @@
+<div *ngIf="acceptedDisclaimer | async">
+    <p style="text-align: center">Read the the following conversations by students in a Norwegian classroom and select below what you think it shows.</p>
+    <h1 style="text-align: center"> Completed: {{ finished }} / {{ classroomConversations.length }} </h1>
+    <div class="conversation-container" *ngIf="currentConversation | async as currentConversation">
+        <div *ngIf="value == 100">
+            <div *ngFor="let speech of currentConversation">
+                <div *ngIf="speech.align == 'left'" class="conversation-left conversation">
+                    <sup style="margin-right: 10px; margin-left: 5px;">{{ speech.speaker }}</sup> {{ speech.content }}
+                </div>
+    
+                <div *ngIf="speech.align == 'right'" class="conversation-right conversation">
+                    {{ speech.content }}<sup style="margin-left: 10px; margin-right: 5px;"> {{ speech.speaker }}</sup>
+                </div>
+    
+                <div *ngIf="speech.align == 'center'" class="conversation-center conversation">
+                    <b>{{ speech.content }}</b>
+                </div>
+            </div>
+            <div class="conversation-end" style="text-align: center;">
+                <b>End of Conversation</b>
+            </div>
+        </div>
+    </div>
+    <p-progressBar mode="indeterminate" *ngIf="value !== 100" [value]="value"></p-progressBar>
+    <div *ngIf="value == 100">
+        <div class="response" *ngIf="currentOutcome | async as currentOutcome">
+            The main takeaway of this conversation is: <p-dropdown [(ngModel)]="selectedAnswer" [options]="currentOutcome.options"></p-dropdown>
+        </div>
+        <div class="check-answer">
+            <p-button (click)="submitAnswer()" label="Check Answer"></p-button>
+        </div>
+    </div>
+
+</div>
+<p-toast [life]="3000" position="bottom-right"></p-toast>
