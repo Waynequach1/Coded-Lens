@@ -1,7 +1,14 @@
-<div class="center">
-    <div class="question" *ngFor="let question of questions; index as i">
+<div class="center" [formGroup]="questionGroup">
+    <div class="question" *ngFor="let question of questions; index as i" formArrayName="questionArray">
        {{ i + 1 }}. {{ question.question }} <br /><br />
-       <p-listbox [options]="question.possible_answers" placeholder="Select an answer">
+       <p-listbox [options]="question.possible_answers" placeholder="Select an answer" [formControlName]="i">
     </p-listbox>
     </div>
 </div>
+
+<p-button 
+    label="Check Answers" 
+    (onClick)="checkAnswers()"
+></p-button>
+
+<p-toast position="bottom-center"></p-toast>

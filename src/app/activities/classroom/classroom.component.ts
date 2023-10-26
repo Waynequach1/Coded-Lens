@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { classroomConversations } from './data/classroom-conversations';
 import { ClassroomSpeech, ClassroomOutcome } from './models';
 import { conversationOutcomes } from './data/conversation-outcomes';
-import { Message, MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'coded-lens-classroom',

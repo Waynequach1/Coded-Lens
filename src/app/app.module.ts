@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button'
@@ -60,7 +60,8 @@ import { QuizComponent } from './activities/quiz/quiz.component';
     DynamicDialogModule,
     ToastModule,    
     ProgressBarModule,
-    ListboxModule 
+    ListboxModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
