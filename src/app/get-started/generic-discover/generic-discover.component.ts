@@ -95,10 +95,10 @@ export class GenericDiscoverComponent implements OnInit {
   private setupButtonText() {
     switch (this.pageType) {
       case "the_lens":
-        this.leftButtonSeverity = 'danger';
-        this.leftButtonText = 'The Bad';
-        this.rightButtonSeverity = 'success';
-        this.rightButtonText = 'The Good';
+        this.leftButtonSeverity = 'success';
+        this.leftButtonText = 'The Good';
+        this.rightButtonSeverity = 'danger';
+        this.rightButtonText = 'The Bad';
         break;
       case "the_good":
         this.leftButtonSeverity = 'Primary';
