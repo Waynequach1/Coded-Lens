@@ -11,7 +11,8 @@ import { FormArray, FormControl, FormGroup } from '@angular/forms';
   providers: [MessageService],
 })
 export class QuizComponent {
-  public questions = quizQuestions;
+  // Randomize the array
+  public questions = quizQuestions.sort(() => Math.random() - 0.5);
   public questionGroup = new FormGroup({
     questionArray: new FormArray(this.questions.map((question) => new FormControl(question.question) as FormControl))
   })
