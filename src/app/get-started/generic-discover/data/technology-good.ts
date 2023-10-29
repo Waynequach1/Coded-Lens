@@ -7,18 +7,18 @@ export const technologyGood: TechnologyInfo[] = [
     },
     {
         technology: "Facial Recognition",
-        body: "When used correctly, facial recognition can help track down wanted fugitives and promotes greater security.",
+        body: "When used correctly, facial recognition can help track down wanted fugitives and promotes greater security. Additionally, it promotes security and ease of access for homes that choose to use it.",
     },
     {
         technology: "Algorithms For Determining Employment",
-        body: "Employers save money on hiring employees which could lead to improved salaries. On average employers spend $4700 trying to recruit for open positions with many employers saying that it costs on average 3x-4x the salary of a position in order to recruit a good employee.",
+        body: "Employers save money on hiring employees which could lead to improved salaries. On average employers spend $4700 trying to recruit for open positions with many employers saying that it costs on average three to four times the salary of a position in order to recruit a good employee.",
     },
     {
         technology: "Chat Bots",
-        body: "There is work slowly on developing ai that are more language diverse",
+        body: "There is work slowly being done on developing ai that are more language diverse.",
     },
     {
         technology: "Crime Watch Algorithms",
-        body: "Again, when used correctly these algorithms can help to speed up catching up criminals and stop crimes right as they emerge.",
+        body: "When used correctly these algorithms can help to speed up catching up criminals and stop crimes right as they emerge. It also promotes greater security in areas of risk since there will be greater police activity.",
     }
 ]

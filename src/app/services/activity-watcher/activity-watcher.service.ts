@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
-import { AlexaInfo } from './models';
+import { AlexaInfo, CodeData } from './models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ActivityWatcherService {
   private alexaData: AlexaInfo;
+  private codeData: CodeData;
+
   constructor() {
     this.alexaData = this.initializeAlexaData();
+    this.codeData = this.initializeCodeData();
    }
 
    public updateAlexaData(data: AlexaInfo) {
@@ -16,6 +19,10 @@ export class ActivityWatcherService {
 
    public getAlexaData() {
     return this.alexaData;
+   }
+
+   public getCodeData() {
+      return this.codeData;
    }
 
 
@@ -27,6 +34,23 @@ export class ActivityWatcherService {
       foundSecrets: [],
       // Taken from highest number in data file
       totalSecrets: 1,
+    })
+   }
+
+   public updateCodeData(key: keyof CodeData ) {
+    this.codeData[key] = true;
+
+    if (this.codeData.the_good && this.codeData.the_implications && this.codeData.the_lens) {
+      this.codeData.finished_all = true;
+    }
+   }
+
+   private initializeCodeData(): CodeData {
+    return ({
+      the_good: false,
+      the_implications: false, 
+      the_lens: false,
+      finished_all: false,
     })
    }
 }

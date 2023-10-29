@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button'
@@ -14,6 +14,8 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';
+import { ListboxModule } from 'primeng/listbox';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +28,7 @@ import { FormatTitlePipe } from './get-started/generic-discover/pipes/format-tit
 import { AlexaComponent } from './activities/alexa/alexa.component';
 import { ClassroomComponent } from './activities/classroom/classroom.component';
 import { WarningPrompt } from './activities/classroom/warning-prompt/warning-prompt.component';
+import { QuizComponent } from './activities/quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { WarningPrompt } from './activities/classroom/warning-prompt/warning-pro
     AlexaComponent,
     ClassroomComponent,
     WarningPrompt,
+    QuizComponent,
   ],
   imports: [
     CommonModule,
@@ -55,7 +59,9 @@ import { WarningPrompt } from './activities/classroom/warning-prompt/warning-pro
     ToggleButtonModule,
     DynamicDialogModule,
     ToastModule,    
-    ProgressBarModule
+    ProgressBarModule,
+    ListboxModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

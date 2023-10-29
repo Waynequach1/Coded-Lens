@@ -32,6 +32,15 @@
     </div>
 </div>
 
+<div class="center" *ngIf="finishedReadingAll">
+    Congratulations! You finished reading all of the content. Proceed below to tackle the following quiz. <br />
+    <p-button
+        severity="warning"
+        label="Take the quiz"
+        (onClick)="redirectToQuiz()">
+    </p-button>
+</div>
+
 <ng-template #nonlens>
     <div class= "selection-container">
         <p-button 
