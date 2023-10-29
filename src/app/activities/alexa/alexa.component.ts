@@ -16,7 +16,7 @@ export class AlexaComponent {
   public conversationOptions: BehaviorSubject<Conversation[]> = new BehaviorSubject<Conversation[]>([]);
   public currentPrompt: BehaviorSubject<Conversation>;
   public alexaInfo: BehaviorSubject<AlexaInfo>;
-  public textAnimate: boolean = true;
+  public textAnimate: boolean = false;
   public isAnimating: boolean = false;
 
   private fullConversationLogs = ConversationData;
@@ -45,8 +45,8 @@ export class AlexaComponent {
 
   public selectPrompt(conversation: Conversation) {
     this.resetPromptAnimation();
-      this.updateDisplay(conversation);
-      this.currentPrompt.next(conversation);
+    this.updateDisplay(conversation);
+    this.currentPrompt.next(conversation);
   }
 
   public finishConversation(conversation: Conversation) {
@@ -68,7 +68,9 @@ export class AlexaComponent {
   }
 
   public changeTextSpeed() {
-    this.textAnimate = !this.textAnimate;
+    if (!this.isAnimating) {
+      this.textAnimate = !this.textAnimate;
+    }
   }
 
   // Resets the prompt animation, uses document but i dont see other ways to make things fancy 
@@ -91,12 +93,14 @@ export class AlexaComponent {
       if (index  == -1) {
         this.addConversation(this.createSpeech(conversation.prompt, true));
       }else if(index == conversation.response.length) {
-        this.isAnimating = false;
         clearInterval(delayMessages);
+        
+        // Give time for css animations to fully play out.
+        setTimeout(() => this.isAnimating = false, 500);        
       } else {
         this.addConversation(this.createSpeech(conversation.response[index]));
       }
-      index = index + 1;       
+      index = index + 1;        
     }, this.textAnimate ? 800 : 100);
 
   }

@@ -7,7 +7,7 @@ export const technologyExplanations: TechnologyInfo[] = [
     },
     {
         technology: "Facial Recognition",
-        body: "Another super popular bias in technology is facial recognition. Many countries have already started enforcing use of this technology in widespread areas from simple beauty apps to use in security or even the surveillance of individuals. The major concern however is that facial recognition is inherently biased. These technologies use machine learning to teach an ai using large data sets however these data sets are usually dominated by a white male sample size. As such people of color and woman often get higher inaccuracies when using these technologies due to the lack of training data. Further, the cross section of these minorities suffer most from this biased dataset with substantially higher inaccuracies then white males."
+        body: "Another super popular bias in technology is facial recognition. Many countries have already started enforcing use of this technology in widespread areas from simple beauty apps to use in security or even the surveillance of individuals. The major concern however is that facial recognition is inherently biased. These technologies use machine learning to teach an ai using large data sets however these data sets are usually dominated by a white male sample size. As such people of color and woman often get higher inaccuracies when using these technologies due to the lack of training data. Further, the cross section of these minorities suffers most from this biased dataset with substantially higher inaccuracies then white males."
     },
     {
         technology: "Algorithms For Determining Employment",
@@ -15,7 +15,7 @@ export const technologyExplanations: TechnologyInfo[] = [
     },
     {
         technology: "Chat Bots",
-        body: "Chat bots that are designed simply for interacting with users and performing basic commands have biases too. Inherently, the developers of these chat bots are trained on biased data similarly to facial recognition algorithms. As such, these chat bots have limited capability when interacting with individuals outside of the majority group (white males) and aren\'t capable of understanding minority groups use of English (aka African-American Vernacular English or AAVE). Voice based chat bots also show similar difficulty understanding accents of many minoritiy groups.",
+        body: "Chat bots that are designed simply for interacting with users and performing basic commands have biases too. Inherently, the developers of these chat bots are trained on biased data similarly to facial recognition algorithms. As such, these chat bots have limited capability when interacting with individuals outside of the majority group (white males) and aren\'t capable of understanding minority groups use of English (aka African-American Vernacular English or AAVE). Voice based chat bots also show similar difficulty understanding accents of many minority groups.",
     },
     {
         technology: "Crime Watch Algorithms",

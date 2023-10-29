@@ -1,5 +1,5 @@
 <div class="header">
-    <H1>Welcome to Alexa the chat bot. Interact with Alexa below.</H1>
+    <H1>Welcome to Alexa the chat bot. Interact with Alexa by selecting from the following prompts.</H1>
 </div>
 
 <div class="skip-button">
@@ -7,20 +7,20 @@
         Conversations finished: {{ info.foundConversations.length }} \ {{ info.totalConversations}} <br>
         Secrets conversations found: {{ info.foundSecrets.length }} \ {{ info.totalSecrets}} 
     </div>
-    <p-toggleButton class="text-animation" pTooltip="Click to enable/disable the text animation" tooltipPosition="top" [ngModel]="textAnimate" (click)="changeTextSpeed()" offIcon="pi pi-fast-forward" onIcon="pi pi-fast-backward"></p-toggleButton>
+    <p-toggleButton [disabled]="isAnimating" class="text-animation" pTooltip="Click to enable/disable the text animation" tooltipPosition="top" [ngModel]="textAnimate" (click)="changeTextSpeed()" offIcon="pi pi-fast-forward" onIcon="pi pi-fast-forward"></p-toggleButton>
 </div>
 
 <div class="conversation-container" *ngIf="currentPrompt | async as conversation">
     <div class="display-container" *ngIf="conversationLog | async as log">
         <div *ngFor="let speech of log">
-            <p *ngIf="!speech.speakerIsHuman" class="robot-text" [ngClass]="textAnimate ? 'typewriter' : 'typewriter-no-animation'">{{ speech.content }}</p>
-            <p *ngIf="speech.speakerIsHuman" class="human-text" [ngClass]="textAnimate ? 'typewriter' : 'typewriter-no-animation'">{{ speech.content }}</p>
+            <div *ngIf="!speech.speakerIsHuman" class="robot-text" [ngClass]="textAnimate ? 'typewriter-no-animation' : 'typewriter'">{{ speech.content }}</div>
+            <p *ngIf="speech.speakerIsHuman" class="human-text" [ngClass]="textAnimate ? 'typewriter-no-animation' : 'typewriter'">{{ speech.content }}</p>
         </div>
     </div>
     <div class="message-container">
         <div class="prompt-container">
             <div class="prompt">
-                <p id="prompt" [ngClass]="textAnimate ? 'typewriter-typing' : 'typewriter-no-animation'">{{ conversation.prompt }}</p>
+                <p id="prompt" [ngClass]="textAnimate ? 'typewriter-typing-no-animation' : 'typewriter-typing'">{{ conversation.prompt }}</p>
             </div>
             <p-button label="Submit"></p-button>
         </div>

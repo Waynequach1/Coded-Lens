@@ -3,7 +3,7 @@ import { Quote } from "../models/quote.model";
 export const quotes: Quote[] = [
     {
       quote: "It\'s an algorithm, they were told. It\'s very complex. This discouraged many from pressing further. Many people, unfortunately, are intimidated by math.",
-      title: "Race After Technolog Abolitionist Tools for the New Jim Code Polity",
+      title: "Weapons of Math Destruction",
       author: "Cathy O\'Neil",
       size: "18px"
     },
@@ -21,7 +21,7 @@ export const quotes: Quote[] = [
     },
     {
       quote: "Anti-Blackness is no glitch. The system is accurately rigged, we might say, because, unlike in natural weather forecasts, the weathermen are also the ones who make it rain",
-      title: "Weapons of Math Destruction",
+      title: "Race After Technolog Abolitionist Tools for the New Jim Code Polity",
       author: "Ruha Benjamin",
       size: "16px"
     },

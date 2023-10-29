@@ -57,13 +57,13 @@
     border: 1px solid green;
 }
 
-.robot-text {
-    text-align: right;
+.robot-text {   
     color: blue;
     background-color: aliceblue;
     margin-right: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
+    text-align: right;
 }
 
 
@@ -74,6 +74,7 @@
     white-space: nowrap; /* Keeps the content on a single line */
     animation: 
         typing 1.5s steps(40, end);  
+    animation-fill-mode: forwards;
   }
 
   .typewriter-no-animation {
@@ -81,6 +82,7 @@
     white-space: nowrap; /* Keeps the content on a single line */
     animation: 
         typing 0.3s steps(40, end);  
+    animation-fill-mode: forwards;
   }
 
   .typewriter-typing {
@@ -100,7 +102,10 @@
   .typewriter-typing-no-animation {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0;
+    
+    margin-right: auto;
+    padding-top: 0.5em;
+    padding-left: 0.5em;
     border-right: .15em solid transparent; /* The typwriter cursor */
     animation: 
         typing 0.3s steps(40, end),
@@ -110,8 +115,9 @@
   
   /* The typing effect */
   @keyframes typing {
-    from { width: 0;  }
-    to { width: 100%; }
+    0% { width: 0;  }
+    99.999% {white-space: no-wrap;}
+    100% { width: 100%; white-space: wrap; }
   }
   
   /* The typewriter cursor effect */
