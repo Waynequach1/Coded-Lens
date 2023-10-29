@@ -75,7 +75,7 @@ export class ClassroomComponent {
         this.value = 0;
         this.fakeLoad();
       } else {
-        this.finished = this.finished - 1;
+        this.finished = classroomConversations.length;
         this.messageService.add({
           severity: "info",
           summary: "Correct Answer",
@@ -86,7 +86,7 @@ export class ClassroomComponent {
       this.messageService.add({
         severity: "error",
         summary: "Incorrect Answer",
-        detail: "Incorrect, please try again.",
+        detail: "Incorrect, that answer was not the main takeaway for that conversation.",
       })
     }
   }

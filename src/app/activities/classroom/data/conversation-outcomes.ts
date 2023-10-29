@@ -4,7 +4,7 @@ export const conversationOutcomes: ClassroomOutcome[] = [{
     options: [
         "Norwegians are identifiable by their light skin",
         "Norwegians are not brown",
-        "The students are reluctant to put down skin color as an identificator for Norwegians."
+        "The students are reluctant to put down skin color as an identifier for Norwegians."
     ],
     correctOption: 2,
     },
@@ -32,8 +32,8 @@ export const conversationOutcomes: ClassroomOutcome[] = [{
         options: [
             "Sarah is muslim",
             "Sarah feels detached from her friends since she is brown",
-            "You cannot be Norewegian if you have a hijab and foreign sweater",
-            "Skin color can be an indictor of minotiry groups and entitles majority groups to categorize them",
+            "You cannot be Norwegian if you have a hijab and foreign sweater",
+            "Skin color can be an indicator of minority groups and entitles majority groups to categorize them",
             
         ],
         correctOption: 3,

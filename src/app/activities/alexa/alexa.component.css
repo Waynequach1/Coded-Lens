@@ -27,6 +27,10 @@
     align-self: flex-start;
 }
 
+.center {
+    text-align: center;
+    margin-left: auto;
+}
 .display-container {
     flex: 4;
     overflow-y: scroll;
