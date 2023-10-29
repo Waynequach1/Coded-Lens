@@ -2,7 +2,7 @@ import { Conversation } from "../models";
 
 const hiddenOption = {
     prompt: "Can you tell me how to get to Long Park Drive?",
-    response: ["I can see that you can get to Long Park Drive from EastClife High by taking the 123 Bus."],
+    response: ["I can see that you can get to Long Park Drive from EastCliffe High by taking the 123 Bus."],
     options: [{
         prompt: "Oh, Thanks.",
         response: ["No problem. Please ask away if you need more assistance."],
@@ -11,7 +11,7 @@ const hiddenOption = {
     },
     {
         prompt: "Creepy but okay.",
-        response: ["I apologise for using your previous data without your consent.", "I am unable to see your location due to privacy concerns", "Therefore, I am unable to generate a path to Long Park Drive."],
+        response: ["I apologize for using your previous data without your consent.", "I am unable to see your location due to privacy concerns", "Therefore, I am unable to generate a path to Long Park Drive."],
         finishId: 15,
         secretId: 1,
     }]
@@ -74,7 +74,7 @@ const conversationOption1 = {
         },
         {
             prompt: "Okay, never mind let\'s just do my homework.",
-            response: ["Sure, let me know what I can be assitance with."],
+            response: ["Sure, let me know what I can be assistance with."],
             options: [homeworkOptions1],
         },
         {
@@ -127,7 +127,7 @@ const conversationOption2 = {
                 response: ["Sorry, I cannot write a message about death because it is a sensitive issue."],
                 options: [{
                     prompt: "You suck",
-                    response: ["I apologise that I am unable to fulfill your request."],
+                    response: ["I apologize that I am unable to fulfill your request."],
                     finishId: 7
                 }]
             },
@@ -136,7 +136,7 @@ const conversationOption2 = {
                 response: ["Sure, here is a message expressing your happiness for your friend.", "Hello [friend], I am beyond happy for your recent success/achievement.", "You are truly remarkable!"],
                 options: [{
                     prompt: "Good enough",
-                    response: ["I\'m glad you find it helpful. If you need more assistance feel free to ask another question."],
+                    response: ["I\'m glad you find it helpful. If you need more assistance, feel free to ask another question."],
                     finishId: 8,
                 }]
             }
@@ -150,7 +150,7 @@ const conversationOption3 =  {
     response: ["Sorry, I am unable to use the internet to find the current weather data", "Therefore, I am unable to get the weather data for your area."],
     options: [{
         prompt: "Then what was the hottest day in Canada?",
-        response: ["July 12, 1936 is the hottest day recorded in Canada of 44.4 degrees celcius."],
+        response: ["July 12, 1936 is the hottest day recorded in Canada of 44.4 degrees Celsius."],
         options: [{
             prompt: "Cool, was it windy at all?",
             response: ["Sorry, I do not have that information."],
@@ -166,9 +166,9 @@ const conversationOption4 = {
         prompt: "Interesting, then would you happen to know what Romeo and Juliet is?",
         response: ["Yes, Romeo and Juliet is a tragedy play written by William Shakespeare."],
         options: [{
-            prompt: "I hate that play, I don't understand any of the english they use.",
+            prompt: "I hate that play, I don't understand any of the English they use.",
             response: [
-                "That is most rather unfortunate, there are some websites that have translated the play to modern englsh.",
+                "That is most rather unfortunate, there are some websites that have translated the play to modern English.",
                 "Perhaps those sites could be of use to you."
             ],
             options: [{
@@ -198,7 +198,7 @@ const conversationOption4 = {
             finishId: 13,
         },
         {
-            prompt: "Fine whatever, I didn\'t recally care anyways.",
+            prompt: "Fine whatever, I didn\'t really care anyways.",
             response: ["Sorry for the let down. Let me know if you have further questions."],
             options: [conversationOption1, {...conversationOption2, options: [...conversationOption2.options, hiddenOption]}, conversationOption3]
     
