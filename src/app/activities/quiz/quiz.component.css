@@ -1,0 +1,12 @@
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+.question {
+    margin: 1em 3em 1em 3em;
+}
+
+.answer-selection {
+    border: 1px solid black;
+}

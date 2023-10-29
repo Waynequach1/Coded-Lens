@@ -1,0 +1,40 @@
+<div class="header">
+    <h1>Welcome to Alexa the chat bot</h1>
+</div>
+
+<p class="center">Interact with Alexa by selecting from the following prompts, some prompts may lead to interesting conversations whereas others are just simple every day interactions. See if you can tell you the difference while conversing with Alexa.</p>
+
+<div class="skip-button">
+    <div class="display-statistics" *ngIf="alexaInfo | async as info">
+        Conversations finished: {{ info.foundConversations.length }} \ {{ info.totalConversations}} <br>
+        Secrets conversations found: {{ info.foundSecrets.length }} \ {{ info.totalSecrets}} 
+    </div>
+    <p-toggleButton [disabled]="isAnimating" class="text-animation" pTooltip="Click to enable/disable the text animation" tooltipPosition="top" [ngModel]="textAnimate" (click)="changeTextSpeed()" offIcon="pi pi-fast-forward" onIcon="pi pi-fast-forward"></p-toggleButton>
+</div>
+
+<div class="conversation-container" *ngIf="currentPrompt | async as conversation">
+    <div class="display-container" *ngIf="conversationLog | async as log">
+        <div *ngFor="let speech of log">
+            <div *ngIf="!speech.speakerIsHuman" class="robot-text" [ngClass]="textAnimate ? 'typewriter-no-animation' : 'typewriter'">{{ speech.content }}</div>
+            <p *ngIf="speech.speakerIsHuman" class="human-text" [ngClass]="textAnimate ? 'typewriter-no-animation' : 'typewriter'">{{ speech.content }}</p>
+        </div>
+    </div>
+    <div class="message-container">
+        <div class="prompt-container">
+            <div class="prompt">
+                <p id="prompt" [ngClass]="textAnimate ? 'typewriter-typing-no-animation' : 'typewriter-typing'">{{ conversation.prompt }}</p>
+            </div>
+            <p-button label="Submit"></p-button>
+        </div>
+
+
+        <div class="responses">
+            <div *ngIf="conversation.options">
+                <div *ngFor="let option of conversation.options">
+                    <input [disabled]="isAnimating" (click)="selectPrompt(option)" class="option" readonly="readonly" type="text" pInputText [placeholder]="option.prompt" />
+                </div>
+            </div>
+            <input [disabled]="isAnimating" *ngIf="!conversation.options" class="option" (click)="finishConversation(conversation)" readonly="readonly" type="text" pInputText placeholder="No more prompts. Click to restart Alexa."/>
+        </div>
+    </div>
+</div>

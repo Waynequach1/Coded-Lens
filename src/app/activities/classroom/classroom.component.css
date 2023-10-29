@@ -1,0 +1,46 @@
+.conversation-container {
+    background-color: navy;
+    height: 70vh;
+    overflow-y: auto;
+}
+
+.conversation-left {
+    text-align: left;
+    background-color:honeydew;
+}
+
+.conversation-right {
+    text-align: right;
+    background-color:beige;
+}
+
+.conversation-center {
+    text-align: center;
+    background-color:antiquewhite;
+    border-left: 3px solid red;
+    border-right: 3px solid red;
+}
+
+.conversation {
+    margin: auto;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
+sup {
+    text-decoration: underline;
+}
+
+.conversation-end {
+    color: white;
+    background-color: brown;
+}
+
+.response {
+    margin-top: 10px;
+}
+.check-answer {
+    text-align: center;
+    margin-left: auto;
+    margin-top: 10px;
+}

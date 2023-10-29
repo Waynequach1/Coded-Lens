@@ -6,7 +6,7 @@ describe('FormatTitlePipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('should format to include a space and upper case', () => {
+  it('should format to include a space', () => {
     expect(pipe.transform("potato_wedge")).toBe("potato wedge");
   })
 

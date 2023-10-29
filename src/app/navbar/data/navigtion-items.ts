@@ -25,16 +25,16 @@ export const navigationItems = [
     {
       name: "Activities",
       routeItems: [{
-        name: "A talk in the classroom",
-        route: "/activities/classrom_talk"
+        name: "Classroom discussions",
+        route: "/activities/classroom_talk"
       },
       {
         name: "A talk with Alexa",
         route: "/activities/alexa_talk"
       },
       {
-        name: "A talk with Chris",
-        route: "/activities/chris_talk"
+        name: "Quiz",
+        route: "/activities/quiz"
       }]
     },
     {
