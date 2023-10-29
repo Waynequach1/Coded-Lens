@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { WarningPrompt } from './warning-prompt/warning-prompt.component';
-import { BehaviorSubject, Observable, map, tap } from 'rxjs';
+import { BehaviorSubject, Observable, map, of, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { classroomConversations } from './data/classroom-conversations';
 import { ClassroomSpeech, ClassroomOutcome } from './models';
 import { conversationOutcomes } from './data/conversation-outcomes';
 import { MessageService } from 'primeng/api';
+import { ActivityWatcherService } from 'src/app/services/activity-watcher/activity-watcher.service';
 
 @Component({
   selector: 'coded-lens-classroom',
@@ -27,24 +28,34 @@ export class ClassroomComponent {
   private router: Router;
   private dialogService: DialogService;
   private messageService: MessageService;
+  private activityWatcherService: ActivityWatcherService;
 
-  constructor(dialogService: DialogService, router: Router, messageService: MessageService) {
+  constructor(dialogService: DialogService, router: Router, messageService: MessageService, activityWatcherService: ActivityWatcherService) {
     this.dialogService = dialogService;
     this.router = router;
     this.messageService = messageService;
+    this.activityWatcherService = activityWatcherService;
   }
 
   ngOnInit() {
-    this.acceptedDisclaimer = this.dialogService.open(WarningPrompt, {}).onClose.pipe(
-      map((resp) => resp ?? false),
-      tap((resp) => {
-        // Declined the warning, redirect out of page.
-        if (!resp) {
-          this.router.navigateByUrl('/home');
-        }
-      }));
-
+    if (!this.activityWatcherService.getAcceptedClassroomPrompt()) {
+      this.acceptedDisclaimer = this.dialogService.open(WarningPrompt, {}).onClose.pipe(
+        map((resp) => resp ?? false),
+        tap((resp) => {
+          // Declined the warning, redirect out of page.
+          if (!resp) {
+            this.router.navigateByUrl('/home');
+          } else {
+            setTimeout(() => this.fakeLoad(), 1000);
+            this.activityWatcherService.setAcceptedClassroomPrompt();
+          }
+        }));
+    } else {
+      this.acceptedDisclaimer = of(true);
       setTimeout(() => this.fakeLoad(), 1000);
+    }
+
+   
   }
 
   public submitAnswer() {

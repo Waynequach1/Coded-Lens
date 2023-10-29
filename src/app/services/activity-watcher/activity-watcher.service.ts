@@ -7,6 +7,7 @@ import { AlexaInfo, CodeData } from './models';
 export class ActivityWatcherService {
   private alexaData: AlexaInfo;
   private codeData: CodeData;
+  private acceptedClassroomPrompt: boolean = false;
 
   constructor() {
     this.alexaData = this.initializeAlexaData();
@@ -24,7 +25,10 @@ export class ActivityWatcherService {
    public getCodeData() {
       return this.codeData;
    }
-
+   
+   public getAcceptedClassroomPrompt() {
+    return this.acceptedClassroomPrompt;
+   }
 
    public initializeAlexaData(): AlexaInfo {
     return ({
@@ -35,6 +39,10 @@ export class ActivityWatcherService {
       // Taken from highest number in data file
       totalSecrets: 1,
     })
+   }
+
+   public setAcceptedClassroomPrompt() {
+    this.acceptedClassroomPrompt = true;
    }
 
    public updateCodeData(key: keyof CodeData ) {
