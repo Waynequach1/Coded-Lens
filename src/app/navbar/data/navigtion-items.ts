@@ -31,6 +31,13 @@ export const navigationItems: NavigationItem[] = [
         locked: true,
         lockedMessage: 'Pick up the lens before you get to this reading.',
         unlockedMessage: '',
+      },
+      {
+        name: "Quiz",
+        route: "/activities/quiz",
+        locked: true,
+        lockedMessage: 'Finish all the readings to take the quiz',
+        unlockedMessage: 'Attempt the quiz for further understanding on bias in technology',
       }]
     },
     {
@@ -43,10 +50,7 @@ export const navigationItems: NavigationItem[] = [
         name: "A talk with Alexa",
         route: "/activities/alexa_talk"
       },
-      {
-        name: "Quiz",
-        route: "/activities/quiz"
-      }],
+      ],
       locked: true,
       lockedMessage: 'Please finish all readings under \'Get Started\' to begin activities.',
       unlockedMessage: '',

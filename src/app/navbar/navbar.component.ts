@@ -37,18 +37,13 @@ export class NavbarComponent implements OnInit{
 
 
   private getNavigationItems() {
-    const codeData = this.activityWatcherService.getCodeData();
-
-    return codeData.pipe(map((data) => {
-      const potato = navigationItems.map((item) => {
+    return this.activityWatcherService.getCodeData().pipe(map((data) => 
+       navigationItems.map((item) => {
         item = this.updateNavigationLockStatus(item, data);
         item.routeItems = item.routeItems?.map((routeItem) => this.updateNavigationLockStatus(routeItem, data))
         return item;
       })
-  
-      console.log(potato);
-      return potato;
-    }))
+    ))
     
   }
 
@@ -59,7 +54,7 @@ export class NavbarComponent implements OnInit{
         item.locked = !data.the_code;
       } else if (item.name === 'The Implications' || item.name === 'The Good') {
         item.locked = !(data.the_code && data.the_lens);
-      } else if (item.name === 'Activities') {
+      } else if (item.name === 'Activities' || item.name === 'Quiz') {
         item.locked = !data.finished_all;
       }
 
