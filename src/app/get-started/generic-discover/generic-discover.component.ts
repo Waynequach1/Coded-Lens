@@ -39,7 +39,7 @@ export class GenericDiscoverComponent implements OnInit {
 
   ngOnInit() {
     this.activityWatcherService.updateCodeData(this.pageType);
-    this.finishedReadingAll = this.activityWatcherService.getCodeData().finished_all;
+    this.finishedReadingAll = this.activityWatcherService.getCodeData().value.finished_all;
   }
 
   // Inverts the button displays

@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
 import { AlexaInfo, CodeData } from './models';
+import { BehaviorSubject, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ActivityWatcherService {
   private alexaData: AlexaInfo;
-  private codeData: CodeData;
+  // Needs to be behaviour subject for instant access as well as updating navigation links
+  // Throws ExpressionChangedAfterItHasBeenCheckedErrors but not a big concern for now
+  private codeData: BehaviorSubject<CodeData>;
   private acceptedClassroomPrompt: boolean = false;
 
   constructor() {
     this.alexaData = this.initializeAlexaData();
-    this.codeData = this.initializeCodeData();
+    this.codeData = new BehaviorSubject(this.initializeCodeData());
    }
 
    public updateAlexaData(data: AlexaInfo) {
@@ -46,15 +49,19 @@ export class ActivityWatcherService {
    }
 
    public updateCodeData(key: keyof CodeData ) {
-    this.codeData[key] = true;
+    const newValue = this.codeData.value;
+    newValue[key] = true;
 
-    if (this.codeData.the_good && this.codeData.the_implications && this.codeData.the_lens) {
-      this.codeData.finished_all = true;
+    if (newValue.the_good && newValue.the_implications && newValue.the_lens) {
+      newValue.finished_all = true;
     }
+
+    this.codeData.next(newValue)
    }
 
    private initializeCodeData(): CodeData {
     return ({
+      the_code: false,
       the_good: false,
       the_implications: false, 
       the_lens: false,

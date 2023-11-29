@@ -1,4 +1,6 @@
-export const navigationItems = [
+import { NavigationItem } from "../models/navigation-item.model";
+
+export const navigationItems: NavigationItem[] = [
     {
       name: "Home",
       route: "/home"
@@ -11,15 +13,24 @@ export const navigationItems = [
       },
       {
         name: "The Lens At Work",
-        route: "/get_started/the_lens"
+        route: "/get_started/the_lens",
+        locked: true,
+        lockedMessage: 'Get Started with the \'The Code Unveiled\' first!',
+        unlockedMessage: '',
       },
       {
         name: "The Implications",
-        route: "/get_started/the_implications"
+        route: "/get_started/the_implications",
+        locked: true,
+        lockedMessage: 'Pick up the lens before you get to this reading.',
+        unlockedMessage: '',
       },
       {
         name: "The Good",
-        route: "/get_started/the_good"
+        route: "/get_started/the_good",
+        locked: true,
+        lockedMessage: 'Pick up the lens before you get to this reading.',
+        unlockedMessage: '',
       }]
     },
     {
@@ -35,7 +46,10 @@ export const navigationItems = [
       {
         name: "Quiz",
         route: "/activities/quiz"
-      }]
+      }],
+      locked: true,
+      lockedMessage: 'Please finish all readings under \'Get Started\' to begin activities.',
+      unlockedMessage: '',
     },
     {
       name: "Credits",
