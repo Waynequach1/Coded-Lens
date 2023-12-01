@@ -1,9 +1,11 @@
 <h1 class="title">{{ pageType | formatTitle}}</h1>
-<p class="center">{{ pageDescription }}</p>
+<div class="center">{{ pageDescription }}</div>
 
-<div class="text-container" *ngFor="let technology of technologies">
+<br />
+<div class="text-container" *ngFor="let technology of technologies; index as i" [ngStyle]="i % 2 == 0 ? {'color': 'white', 'background-color': 'black'} :  {'color': 'black', 'background-color': 'white'}">
     <span class="large-left">
         {{ technology.technology}}
+        <hr>
     </span>
     
     <p class="text-left-indent">
