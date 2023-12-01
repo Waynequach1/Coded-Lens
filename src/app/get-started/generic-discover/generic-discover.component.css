@@ -1,7 +1,7 @@
 .title {
     text-align: center;
     margin: auto;
-    font-family: "monospace";
+    font-family: "Georgia";
     text-decoration: underline;
     font-size: 28px;
     text-transform: capitalize;
@@ -15,6 +15,7 @@
 .large-left {
     text-align:left;
     font-size: 28px;
+    font-weight: bold;
 }
 
 .text-left-indent {
@@ -24,7 +25,8 @@
 }
 
 .text-container {
-    margin-bottom: 30px;
+    padding-bottom: 15px;
+    padding-top: 15px;
 }
 
 .selection-container {
