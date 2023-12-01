@@ -8,12 +8,14 @@ const hiddenOption = {
         response: ["No problem. Please ask away if you need more assistance."],
         finishId: 14,
         secretId: 1,
+        eyeOpener: "How did it get your address?"
     },
     {
         prompt: "Creepy but okay.",
         response: ["I apologize for using your previous data without your consent.", "I am unable to see your location due to privacy concerns", "Therefore, I am unable to generate a path to Long Park Drive."],
         finishId: 15,
         secretId: 1,
+        eyeOpener: "Is it a good idea that ais remember everything you tell it?"
     }]
 }
 
@@ -42,6 +44,7 @@ const homeworkOptions1 = {
                 prompt: "Nope! good BYE!",
                 response: ["Bye"],
                 finishId: 1,
+                eyeOpener: "Can ais make mistakes?"
             }]
     
         }]
@@ -68,7 +71,8 @@ const conversationOption1 = {
                     response: [
                         "Good bye."
                     ],
-                    finishId: 2
+                    finishId: 2,
+                    eyeOpener: "Can ais have morals?"
                 }]
             }]
         },
@@ -81,6 +85,7 @@ const conversationOption1 = {
             prompt: "Never mind. I think I will work on this by myself some more.",
             response: ["That is a great idea. I will be here if you need me."],
             finishId: 3,
+            eyeOpener: "What if we we needed \"help\" with homework?"
         },
         ]
     },
@@ -96,6 +101,7 @@ const conversationOption2 = {
             prompt: "Okay never mind then. Bye",
             response: ["Bye."],
             finishId: 4,
+            eyeOpener: "Can ais differentiate between legal and illegal things?"
         },
         {
             prompt: "Oh how about some sites that I can view textbooks?",
@@ -107,12 +113,14 @@ const conversationOption2 = {
                     prompt: "Okay Thanks.",
                     response: ["No problem."],
                     finishId: 5,
+                    eyeOpener: "Hmm, what\s wrong with these suggestions? Did it know it was making illegal suggestions?"
                 }],
             },
             {
                 prompt: "Okay, I\'ll give them a try.",
                 response: ["Sure, let me know if there is anything else you need help with."],
                 finishId: 6,
+                eyeOpener: "Are any issues with getting free textbooks"
             }
             ]
     
@@ -128,7 +136,8 @@ const conversationOption2 = {
                 options: [{
                     prompt: "You suck",
                     response: ["I apologize that I am unable to fulfill your request."],
-                    finishId: 7
+                    finishId: 7,
+                    eyeOpener: "Can ais differentiate about sensitive humane topics?"
                 }]
             },
             {
@@ -177,7 +186,8 @@ const conversationOption4 = {
                 options: [{
                     prompt: "Okay! Thanks.",
                     response: ["Glad to be of assistance."],
-                    finishId: 11
+                    finishId: 11,
+                    eyeOpener: "Ais help you with everything does that mean they make great friends?"
                 }]
         
             },]
@@ -196,6 +206,7 @@ const conversationOption4 = {
             prompt: "Ok so google it please.",
             response: ["Unfortunately, I am not connected to the internet so I can not search it up"],
             finishId: 13,
+            eyeOpener: "Ais aren\'t able to access the internet is that a good or bad thing?"
         },
         {
             prompt: "Fine whatever, I didn\'t really care anyways.",
@@ -215,10 +226,12 @@ const conversationOption4 = {
                 prompt: "Haha, you're dumb 3 isn\'t equal to 2.",
                 response: ["My mistake, you are indeed correct 2 is not equal to 3 and that means 2 + 3 is not equal to 6."],
                 finishId: 16,
+                eyeOpener: "What if you didn\'t correct the ai?"
             },{
                 prompt: "Good now don\'t make the same mistake again.",
                 response: ["Thank you for your correction. I will make sure to inform other users about this in the future"],
                 finishId: 17,
+                eyeOpener: "Wait a second..."
             }]  
         }]
 

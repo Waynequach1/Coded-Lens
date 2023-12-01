@@ -4,11 +4,13 @@ import { Conversation, Speech } from './models';
 import { BehaviorSubject, delay } from 'rxjs';
 import { ConversationData } from './data/conversation-data';
 import { AlexaInfo } from '../../services/activity-watcher/models';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'coded-lens-alexa',
   templateUrl: './alexa.component.html',
-  styleUrls: ['./alexa.component.css']
+  styleUrls: ['./alexa.component.css'],
+  providers: [MessageService],
 })
 export class AlexaComponent {
   public activityWatcherService: ActivityWatcherService;
@@ -20,9 +22,11 @@ export class AlexaComponent {
   public isAnimating: boolean = false;
 
   private fullConversationLogs = ConversationData;
+  private messageService: MessageService;
 
-  public constructor(activityWatcherService: ActivityWatcherService) {
+  public constructor(activityWatcherService: ActivityWatcherService, messageService: MessageService) {
     this.activityWatcherService = activityWatcherService;
+    this.messageService = messageService;
 
     // Initialize current prompt data
     this.currentPrompt = new BehaviorSubject<Conversation>(this.fullConversationLogs[0]);
@@ -59,6 +63,12 @@ export class AlexaComponent {
       if (conversation?.secretId && (alexaValue.foundSecrets.indexOf(conversation.secretId) == -1)) {
         newAlexaValue = {...newAlexaValue, foundSecrets: alexaValue.foundConversations.concat([conversation?.secretId])}
       }
+
+      this.messageService.add({
+        severity: "info",
+        summary: "Congrats on finishing a new conversation.",
+        detail: conversation?.eyeOpener ? `Think: ${conversation?.eyeOpener}` : 'There weren\'t any key takeaways from that conversation. Try finding others to learn more.',
+      })
 
       this.activityWatcherService.updateAlexaData(newAlexaValue);
       this.alexaInfo.next(this.activityWatcherService.getAlexaData());

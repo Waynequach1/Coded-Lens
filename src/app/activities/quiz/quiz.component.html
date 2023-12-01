@@ -1,6 +1,7 @@
 <div class="center" [formGroup]="questionGroup">
+    <H1>Quiz</H1> 
     <div class="question" *ngFor="let question of questions; index as i" formArrayName="questionArray">
-       {{ i + 1 }}. {{ question.question }} <br /><br />
+       <div><br />{{ i + 1 }}. {{ question.question }} <br /><br /></div>
        <p-listbox [options]="question.possible_answers" placeholder="Select an answer" [formControlName]="i">
     </p-listbox>
     </div>
