@@ -1,12 +1,23 @@
 .center {
     text-align: center;
     margin: auto;
+    padding: 1.2em;
+    background-image: url("https://images2.alphacoders.com/922/922574.jpg");
 }
 
 .question {
     margin: 1em 3em 1em 3em;
+    background-color: black;
+    border: 1px solid lightgray;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .answer-selection {
-    border: 1px solid black;
+    border: 1px solid white;
+}
+
+* {
+    font-family: 'Georgia';
+    color: whitesmoke;
 }
